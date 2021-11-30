@@ -104,4 +104,21 @@ ul li a{
   color: var(--color-text-dark);
 }
 
+@media (min-width:700px){
+
+#menu-overlay{
+position: fixed;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 100vh;
+  background-color: #000000;
+  opacity: 0.7;
+  }
+  #menu-items{
+    width: 25%;
+  height: 100vh;
+  }
+}
+
 </style>
