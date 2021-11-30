@@ -1,7 +1,7 @@
 :root {
   --color-background: #f3f3f3;
-  --color-background-nav: #18ac98;
-  --color-background-home: #6b737e;
+  --color-background-nav: #16a4ae;
+  --color-background-home: #ffffff;
   --color-text-dark: #3d3d3d;
 }
 
@@ -11,10 +11,10 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
-,
+
 html,
 body {
-  background-color: var(--color-background);
+  background-color: var(--color-background-nav);
 }
 a {
   text-decoration: none;
@@ -23,4 +23,8 @@ a {
 
 a:hover {
   opacity: 0.8;
+}
+
+.container {
+  width: 90%;
 }
