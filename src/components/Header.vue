@@ -41,7 +41,6 @@ export default{
 </script>
 <style scoped>
 header{
-  background-color: var( --color-text-dark);
   width: 100%;
   height: 60px;
   
@@ -59,13 +58,14 @@ nav{
  
 }
 #menu-button{
+  
   width: 35px;
   margin-right: 10px;
   margin-top: 10px;
 
 }
 #menu-overlay{
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 60%;
@@ -107,7 +107,7 @@ ul li a{
 @media (min-width:700px){
 
 #menu-overlay{
-position: fixed;
+position: absolute;
   top: 0;
   left: 0;
   width: 75%;
