@@ -12,8 +12,8 @@
 
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/">Produto</a></li>
-          <li><a href="/">Sobre</a></li>
+          <li><a href="/produto">Produto</a></li>
+          <li><a href="/sobre">Sobre</a></li>
         </ul>
 
       </div>
@@ -65,7 +65,7 @@ nav{
 
 }
 #menu-overlay{
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 60%;
@@ -107,7 +107,7 @@ ul li a{
 @media (min-width:700px){
 
 #menu-overlay{
-position: absolute;
+position: fixed;
   top: 0;
   left: 0;
   width: 75%;
