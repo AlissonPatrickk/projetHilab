@@ -50,17 +50,19 @@ nav{
   display: flex;
   justify-content: space-between;
 }
-
+.container{
+  width: 100%;
+}
 #logo{
   width: 130px;
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: -70px;
  
 }
 #menu-button{
   
   width: 35px;
-  margin-right: 10px;
+  margin-right: -65px;
   margin-top: 10px;
 
 }
