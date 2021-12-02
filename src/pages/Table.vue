@@ -1,39 +1,18 @@
 <template>
-  <div class="container-fluid">
-    <div class="row" style="margin-top:10px">
-      <div class="col-m2-12">
-        <h3>Escolha os exames que deseja comprar</h3>
-        <b-button v-b-modal.modal-prevent-closing class="btn btn-primary float-end">Adicionar item</b-button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col.exame">Exame</th>
-      <th scope="col.quantidade">Quantidade</th>
-      <th scope="col.unidade">Preço Unitario</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-  </tbody>
-</table>
-      </div>
-    </div>
-          <!-- modal -->
-  <div class="mt-3">
-      <div v-if="submittedNames.length === 0"></div>
+  <div class="container">
+    <b-button v-b-modal.modal-prevent-closing class="float-end" style="margin-top: 10px">Open Modal</b-button>
+    <div>
+    <div class="mt-3">
+      Produto
+      <div v-if="submittedNames.length === 0">--</div>
       <ul v-else class="mb-0 pl-3">
-       <li v-for="name in submittedNames" :key="name">{{ name }}</li>
+      <b-table striped hover :items="items"></b-table>
+        
+        <li v-for="name in submittedNames" :key="name">{{ name }}</li>
+         
       </ul>
     </div>
-
+</div>
     <b-modal
       id="modal-prevent-closing"
       ref="modal"
@@ -41,7 +20,6 @@
       @show="resetModal"
       @hidden="resetModal"
       @ok="handleOk"
-      
     >
       <form ref="form" @submit.stop.prevent="handleSubmit">
         <b-form-group
@@ -56,31 +34,23 @@
             :state="nameState"
             required
           ></b-form-input>
-
         </b-form-group>
       </form>
     </b-modal>
-  </div>  
+  </div>
 </template>
 
 <script>
-export default{
-  name:'Table',
-  data(){
-    return{
-      name: '',
-      nameState: 'null',
-      submittedNames: [],       
-    }
-  },
-  components: {
-
-  },
-     methods: {
-       dados(col){
-         console.log(col)
-       },
-
+  export default {
+    data() {
+      return {
+        name: '',
+        nameState: null,
+        submittedNames: [],
+        
+      }
+    },
+    methods: {
       checkFormValidity() {
         const valid = this.$refs.form.checkValidity()
         this.nameState = valid
@@ -109,15 +79,5 @@ export default{
         })
       }
     }
-  
-}
-</script>
-
-<style scoped>
-  h3{
-    font-family: sans-serif;
-    justify-content: center;
-    display: flex;
   }
-</style>
-
+</script>

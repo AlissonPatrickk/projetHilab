@@ -56,13 +56,13 @@ nav{
 #logo{
   width: 130px;
   margin-top: 10px;
-  margin-left: -70px;
+  margin-left: 10px;
  
 }
 #menu-button{
   
   width: 35px;
-  margin-right: -65px;
+  margin-right: 10px;
   margin-top: 10px;
 
 }
