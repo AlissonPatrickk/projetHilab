@@ -50,7 +50,7 @@ main{
 #carrosel{
   width: 600px;
   
-  margin-left: 25%;
+  margin-left: 15%;
   margin-top: 15px;
   position: absolute;
 }

@@ -28,10 +28,9 @@
     </div>
           <!-- modal -->
   <div class="mt-3">
-      Submitted Names:
       <div v-if="submittedNames.length === 0"></div>
       <ul v-else class="mb-0 pl-3">
-        <!-- <li v-for="name in submittedNames">{{ name }}</li> -->
+       <li v-for="name in submittedNames" :key="name">{{ name }}</li>
       </ul>
     </div>
 
@@ -42,6 +41,7 @@
       @show="resetModal"
       @hidden="resetModal"
       @ok="handleOk"
+      
     >
       <form ref="form" @submit.stop.prevent="handleSubmit">
         <b-form-group
@@ -56,6 +56,7 @@
             :state="nameState"
             required
           ></b-form-input>
+
         </b-form-group>
       </form>
     </b-modal>
@@ -68,14 +69,8 @@ export default{
   data(){
     return{
       name: '',
-        nameState: 'null',
-        submittedNames: [],
-        col:{
-          exame:'',
-          quantidade: '',
-          unidade: ''
-        }
-
+      nameState: 'null',
+      submittedNames: [],       
     }
   },
   components: {
