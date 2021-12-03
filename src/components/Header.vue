@@ -67,7 +67,8 @@ nav{
 
 }
 #menu-overlay{
-  position: fixed;
+  position: absolute;
+  z-index: 2;
   top: 0;
   left: 0;
   width: 60%;
@@ -81,7 +82,8 @@ nav{
   margin-bottom: 10px;
 }
 #menu-items{
-  position: fixed;
+  position: absolute;
+  z-index: 2;
   top: 0;
   right: 0%;
   background-color: var(--color-background);
