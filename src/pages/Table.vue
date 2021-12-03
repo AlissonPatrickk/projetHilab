@@ -1,14 +1,14 @@
 <template>
   <div class="container">
-    <b-button v-b-modal.modal-prevent-closing class="float-end" style="margin-top: 10px">Open Modal</b-button>
+    <b-button v-b-modal.modal-prevent-closing class="float-end" style="margin-top: 10px">Adicionar Exame</b-button>
     <div>
     <div class="mt-3">
       Produto
-      <div v-if="submittedNames.length === 0">--</div>
+      <div v-if="produtos.length === 0">--</div>
       <ul v-else class="mb-0 pl-3">
       <b-table striped hover :items="items"></b-table>
         
-        <li v-for="name in submittedNames" :key="name">{{ name }}</li>
+        <li v-for="exame in produtos" :key="exame">{{ exame }}</li>
          
       </ul>
     </div>
@@ -16,25 +16,56 @@
     <b-modal
       id="modal-prevent-closing"
       ref="modal"
-      title="Submit Your Name"
+      title="Escolha os seus exames"
       @show="resetModal"
       @hidden="resetModal"
       @ok="handleOk"
     >
       <form ref="form" @submit.stop.prevent="handleSubmit">
+        <div>  
         <b-form-group
-          label="Name"
-          label-for="name-input"
-          invalid-feedback="Name is required"
-          :state="nameState"
+          label="Exame"
+          label-for="exame-input"
+          :state="exameState"
         >
           <b-form-input
-            id="name-input"
-            v-model="name"
-            :state="nameState"
+            id="exame-input"
+            v-model="exame"
+            :state="exameState"
             required
           ></b-form-input>
         </b-form-group>
+        </div>
+
+         <!-- <div>  
+        <b-form-group
+          label="Quantidade"
+          label-for="exame-input"
+          :state="exameState"
+        >
+          <b-form-input
+            id="exame-input"
+            v-model="exame"
+            :state="exameState"
+            required
+          ></b-form-input>
+        </b-form-group>
+        </div>
+
+         <div>  
+        <b-form-group
+          label="Valor"
+          label-for="exame-input"
+          :state="exameState"
+        >
+          <b-form-input
+            id="exame-input"
+            v-model="exame"
+            :state="exameState"
+            required
+          ></b-form-input>
+        </b-form-group>
+        </div> -->
       </form>
     </b-modal>
   </div>
@@ -44,21 +75,21 @@
   export default {
     data() {
       return {
-        name: '',
-        nameState: null,
-        submittedNames: [],
+        exame: '',
+        exameState: null,
+        produtos: [],
         
       }
     },
     methods: {
       checkFormValidity() {
         const valid = this.$refs.form.checkValidity()
-        this.nameState = valid
+        this.exameState = valid
         return valid
       },
       resetModal() {
-        this.name = ''
-        this.nameState = null
+        this.exame = ''
+        this.exameState = null
       },
       handleOk(bvModalEvt) {
         // Prevent modal from closing
@@ -71,8 +102,8 @@
         if (!this.checkFormValidity()) {
           return
         }
-        // Push the name to submitted names
-        this.submittedNames.push(this.name)
+        // Push the exame to submitted exames
+        this.produtos.push(this.exame)
         // Hide the modal manually
         this.$nextTick(() => {
           this.$bvModal.hide('modal-prevent-closing')
