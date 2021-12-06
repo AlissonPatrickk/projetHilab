@@ -59,8 +59,7 @@ nav{
   margin-left: 10px;
  
 }
-#menu-button{
-  
+#menu-button{  
   width: 35px;
   margin-right: 10px;
   margin-top: 10px;
@@ -77,7 +76,6 @@ nav{
   opacity: 0.7;
 }
 #menu-logo{
-  
   margin-top: 30px;
   margin-bottom: 10px;
 }
@@ -86,7 +84,7 @@ nav{
   z-index: 2;
   top: 0;
   right: 0%;
-  background-color: var(--color-background);
+  background-color: var(--color-background-home);
   width: 40%;
   height: 100vh;
   display: none;

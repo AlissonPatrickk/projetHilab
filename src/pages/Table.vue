@@ -27,7 +27,7 @@
         >
           <b-form-input
             id="name-input"
-            v-model="name"
+            v-model="exam"
             :state="clearState"
             required
           ></b-form-input>
@@ -39,7 +39,8 @@
           :state="clearState"
         >
           <b-form-input
-            id="quantidade-input"           
+            id="quantidade-input" 
+            v-model="quantidade"          
             :state="clearState"
             required
           ></b-form-input>
@@ -52,7 +53,7 @@
         >
           <b-form-input
             id="preco-input"
-           
+            v-model="preco"
             :state="clearState"
             required
           ></b-form-input>
@@ -69,7 +70,7 @@
       return {
         clearState: null,
         items: [
-          { name: 'aa', quantidade: 'bb', preco:'cc'}
+          { exam: 'aa', quantidade: 'bb', preco:'cc'}
         ]       
       }
     },
@@ -80,9 +81,9 @@
         return valid
       },
       resetModal() {
-        this.name = {
-        }
-       
+        this.exam = {
+          
+        }      
         this.clearState = null
       },
       handleOk(bvModalEvt) {
@@ -93,7 +94,7 @@
         if (!this.checkFormValidity()) {
           return
         }
-        this.items.push({name: this.name, quantidade: '1', preco:'2'})
+        this.items.push({exam: this.exam, quantidade: '1', preco:'2'})
         this.$nextTick(() => {
           this.$bvModal.hide('modal-prevent-closing')
         })

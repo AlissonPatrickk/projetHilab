@@ -18,7 +18,7 @@ export default{
 
 <style scoped>
 main{
-  background-color: var(--color-background-home) ;
+  background-color: var(--color-background) ;
   max-width: 100%;
 }
 

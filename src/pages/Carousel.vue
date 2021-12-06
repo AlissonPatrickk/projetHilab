@@ -85,7 +85,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  background-color: var(--color-background-home);
+  background-color: var(--color-background);
 }
 #carrosel{
   width: 700px;
