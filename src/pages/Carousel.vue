@@ -1,8 +1,7 @@
 <template>
   <div>
     <main class="container">
-    <div id="carrosel">
-      
+    <div id="carrosel">  
       <b-carousel
       id="carousel-1"
       v-model="slide"
@@ -42,12 +41,21 @@
         </template>
       </b-carousel-slide>
     </a>
-    
-    </b-carousel>
-    <!-- <p class="mt-4">
-      Slide #: {{ slide }}<br>
-      Sliding: {{ sliding }}
-    </p> -->
+      <a href="/produto">
+      <b-carousel-slide 
+        caption="Hilab Lens"
+        img-href="/produto"
+        img-alt="First slide">
+        <template #img>
+          <img
+            id="lens"
+            src="../assets/lens.png"
+            alt="image slot"
+          >
+        </template>
+      </b-carousel-slide>
+    </a>   
+    </b-carousel>  
     </div>
   </main>
   </div>
@@ -84,5 +92,8 @@
   z-index: 1;
   position: absolute;
   margin-top: 15px;
+}
+#lens{
+  margin-left: 30%;
 }
 </style>

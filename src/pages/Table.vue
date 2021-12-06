@@ -19,6 +19,7 @@
     >
       <form ref="form" @submit.stop.prevent="handleSubmit">
         <div>  
+<!-- Exame -->
         <b-form-group
           label="Exame"
           label-for="name-input"
@@ -27,6 +28,31 @@
           <b-form-input
             id="name-input"
             v-model="name"
+            :state="clearState"
+            required
+          ></b-form-input>
+        </b-form-group>
+<!-- Quantidade -->
+        <b-form-group
+          label="Quantidade"
+          label-for="quantidade-input"
+          :state="clearState"
+        >
+          <b-form-input
+            id="quantidade-input"           
+            :state="clearState"
+            required
+          ></b-form-input>
+        </b-form-group>
+<!-- Preço -->
+        <b-form-group
+          label="Preço"
+          label-for="preco-input"
+          :state="clearState"
+        >
+          <b-form-input
+            id="preco-input"
+           
             :state="clearState"
             required
           ></b-form-input>
@@ -43,7 +69,7 @@
       return {
         clearState: null,
         items: [
-          { name: 'aa ', quantidade: '',  preco: '' },
+          { name: 'aa', quantidade: 'bb', preco:'cc'}
         ]       
       }
     },
@@ -55,8 +81,8 @@
       },
       resetModal() {
         this.name = {
-          
         }
+       
         this.clearState = null
       },
       handleOk(bvModalEvt) {
@@ -67,7 +93,7 @@
         if (!this.checkFormValidity()) {
           return
         }
-        this.items.push({name: this.name, quantidade: '000', preco:'453'})
+        this.items.push({name: this.name, quantidade: '1', preco:'2'})
         this.$nextTick(() => {
           this.$bvModal.hide('modal-prevent-closing')
         })
