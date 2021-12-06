@@ -2,16 +2,12 @@
   <div class="container">
     <b-button v-b-modal.modal-prevent-closing class="float-end" style="margin-top: 10px">Adicionar Exame</b-button>
     <div>
-    <div class="mt-3">
+       <b-table striped hover :items="items">
+
       Produto
-      <div v-if="produtos.length === 0">--</div>
-      <ul v-else class="mb-0 pl-3">
-      <b-table striped hover :items="items"></b-table>
-        
-        <li v-for="exame in produtos" :key="exame">{{ exame }}</li>
-         
-      </ul>
-    </div>
+
+    </b-table>
+    
 </div>
     <b-modal
       id="modal-prevent-closing"
@@ -25,47 +21,17 @@
         <div>  
         <b-form-group
           label="Exame"
-          label-for="exame-input"
-          :state="exameState"
+          label-for="name-input"
+          :state="clearState"
         >
           <b-form-input
-            id="exame-input"
-            v-model="exame"
-            :state="exameState"
+            id="name-input"
+            v-model="name"
+            :state="clearState"
             required
           ></b-form-input>
         </b-form-group>
         </div>
-
-         <!-- <div>  
-        <b-form-group
-          label="Quantidade"
-          label-for="exame-input"
-          :state="exameState"
-        >
-          <b-form-input
-            id="exame-input"
-            v-model="exame"
-            :state="exameState"
-            required
-          ></b-form-input>
-        </b-form-group>
-        </div>
-
-         <div>  
-        <b-form-group
-          label="Valor"
-          label-for="exame-input"
-          :state="exameState"
-        >
-          <b-form-input
-            id="exame-input"
-            v-model="exame"
-            :state="exameState"
-            required
-          ></b-form-input>
-        </b-form-group>
-        </div> -->
       </form>
     </b-modal>
   </div>
@@ -75,36 +41,33 @@
   export default {
     data() {
       return {
-        exame: '',
-        exameState: null,
-        produtos: [],
-        
+        clearState: null,
+        items: [
+          { name: 'aa ', quantidade: '',  preco: '' },
+        ]       
       }
     },
     methods: {
       checkFormValidity() {
         const valid = this.$refs.form.checkValidity()
-        this.exameState = valid
+        this.clearState = valid
         return valid
       },
       resetModal() {
-        this.exame = ''
-        this.exameState = null
+        this.name = {
+          
+        }
+        this.clearState = null
       },
       handleOk(bvModalEvt) {
-        // Prevent modal from closing
         bvModalEvt.preventDefault()
-        // Trigger submit handler
         this.handleSubmit()
       },
       handleSubmit() {
-        // Exit when the form isn't valid
         if (!this.checkFormValidity()) {
           return
         }
-        // Push the exame to submitted exames
-        this.produtos.push(this.exame)
-        // Hide the modal manually
+        this.items.push({name: this.name, quantidade: '000', preco:'453'})
         this.$nextTick(() => {
           this.$bvModal.hide('modal-prevent-closing')
         })
