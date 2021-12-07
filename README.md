@@ -19,6 +19,17 @@ npm run build
 ```
 npm run lint
 ```
+### Framework bootstrap
+```
+npm i bootstrap
+
+npm i bootstrap-vue
+```
+###  vue-router
+```
+npm i vue-router
+```
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
