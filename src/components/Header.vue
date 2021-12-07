@@ -1,71 +1,66 @@
 <template>
   <header class="container">
     <nav>
-
-      <a href="/"><img src="../assets/logo.png" alt="hiLogo" id="logo"></a>
-      
-      <img v-on:click="openMenu" src="../assets/menu.png" alt="Abrir menu" id="menu-button">
-
+      <a href="/"><img src="../assets/logo.png" alt="hiLogo" id="logo" /></a>
+      <img
+        v-on:click="openMenu"
+        src="../assets/menu.png"
+        alt="Abrir menu"
+        id="menu-button"
+      />
       <div v-on:click="closeMenu" id="menu-overlay" v-if="menuActive"></div>
-      <div id="menu-items" :class="{active:menuActive}">
-        <img src="../assets/Vector.png" alt="Abrir menu" id="menu-logo">
-
+      <div id="menu-items" :class="{ active: menuActive }">
+        <img src="../assets/Vector.png" alt="Abrir menu" id="menu-logo" />
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/produto">Produto</a></li>
           <li><a href="/sobre">Sobre</a></li>
         </ul>
-
       </div>
     </nav>
   </header>
 </template>
-
 <script>
-export default{
-  name:'Header',
-  data(){
-    return{
-      menuActive: false
-    }
+export default {
+  name: "Header",
+  data() {
+    return {
+      menuActive: false,
+    };
   },
-  methods:{
-    openMenu:function(){
+  methods: {
+    openMenu: function () {
       this.menuActive = true;
     },
-    closeMenu:function(){
+    closeMenu: function () {
       this.menuActive = false;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 <style scoped>
-header{
+header {
   width: 100%;
   height: 60px;
-  
 }
-
-nav{
+nav {
   display: flex;
   justify-content: space-between;
 }
-.container{
+.container {
   width: 100%;
 }
-#logo{
+#logo {
   width: 130px;
   margin-top: 10px;
   margin-left: 10px;
- 
 }
-#menu-button{  
+#menu-button {
   width: 35px;
   margin-right: 10px;
   margin-top: 10px;
-
 }
-#menu-overlay{
+#menu-overlay {
   position: absolute;
   z-index: 2;
   top: 0;
@@ -75,11 +70,12 @@ nav{
   background-color: #000000;
   opacity: 0.7;
 }
-#menu-logo{
+#menu-logo {
   margin-top: 30px;
   margin-bottom: 10px;
+  margin-right: -15px;
 }
-#menu-items{
+#menu-items {
   position: absolute;
   z-index: 2;
   top: 0;
@@ -92,35 +88,32 @@ nav{
   justify-content: flex-start;
   align-items: center;
 }
-#menu-items.active{
+#menu-items.active {
   display: flex;
 }
-ul{
+ul {
   list-style: none;
-  text-align:center
+  text-align: center;
 }
-ul li{
+ul li {
   margin: 20px 0;
 }
-ul li a{
+ul li a {
   color: var(--color-text-dark);
 }
-
-@media (min-width:700px){
-
-#menu-overlay{
-position: fixed;
-  top: 0;
-  left: 0;
-  width: 75%;
-  height: 100vh;
-  background-color: #000000;
-  opacity: 0.7;
+@media (min-width: 700px) {
+  #menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 100vh;
+    background-color: #000000;
+    opacity: 0.7;
   }
-  #menu-items{
+  #menu-items {
     width: 25%;
-  height: 100vh;
+    height: 100vh;
   }
 }
-
 </style>
