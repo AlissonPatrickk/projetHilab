@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main class="container">
+    <main class="container">     
       <div id="carrosel">
         <b-carousel
           id="carousel-1"
@@ -55,6 +55,9 @@
             </b-carousel-slide>
           </a>
         </b-carousel>
+        <div id="textInicio">
+            <h1>Para adquirir exames basta clicar na imagens ou ir na opção Exame no menu.</h1>
+          </div>
       </div>
     </main>
   </div>
@@ -84,6 +87,13 @@ export default {
   display: flex;
   justify-content: center;
   background-color: var(--color-background-home);
+}
+#textInicio{
+  margin-top: 30px;
+  color: aliceblue;
+}
+h1{
+  font-size: 1.5rem;
 }
 #carrosel {
   width: 700px;

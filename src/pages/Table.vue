@@ -25,13 +25,12 @@
             label-for="name-input"
             :state="clearState"
           >
-            <b-form-input
-              id="name-input"
-              v-bind:key="exam"
-              v-model="exam"
-              :state="clearState"
-              required
-            ></b-form-input>
+            <select class="form-select" id="name-input" v-bind:key="exam" :state="clearState" v-model="exam" required>
+              <option value="Hemograma">Hemograma</option>
+              <option value="Hemoglobina">Hemoglobina</option>
+              <option value="Teste de gravidez(hcg)">Teste de gravidez(hcg)</option>
+              <option value="Teste de covid-19">Teste de covid-19</option>
+            </select>
           </b-form-group>
           <!-- Quantidade -->
           <b-form-group
@@ -43,21 +42,23 @@
               id="quantidade-input"
               v-bind:key="quantidade"
               v-model="quantidade"
+              type="number" min=0 
               :state="clearState"
               required
             ></b-form-input>
           </b-form-group>
-          <!-- Preço -->
+          <!-- data -->
           <b-form-group
-            label="Preço"
-            label-for="preco-input"
+            label="Data de entrega"
+            label-for="data-input"
             :state="clearState"
           >
             <b-form-input
-              id="preco-input"
-              v-bind:key="preco"
-              v-model="preco"
+              id="data-input"
+              v-bind:key="data"
+              v-model="data"
               :state="clearState"
+              type="date"
               required
             ></b-form-input>
           </b-form-group>
@@ -66,13 +67,12 @@
     </b-modal>
   </div>
 </template>
-
 <script>
 export default {
   data() {
     return {
       clearState: null,
-      items: [{ exam: "aa", quantidade: "bb", preco: "cc" }],
+      items: [{ Exame: "#", Quantidade_de_Exame: "#", Data_desejada: "#" }],
     };
   },
   methods: {
@@ -84,7 +84,7 @@ export default {
     resetModal() {
       this.exam = "";
       this.quantidade = "";
-      this.preco = "";
+      this.data = "";
       this.clearState = null;
     },
     handleOk(bvModalEvt) {
@@ -96,9 +96,9 @@ export default {
         return;
       }
       this.items.push({
-        exam: this.exam,
-        quantidade: this.quantidade,
-        preco: this.preco,
+        Exame: this.exam,
+        Quantidade_de_Exame: this.quantidade,
+        Data_desejada: this.data,
       });
       this.$nextTick(() => {
         this.$bvModal.hide("modal-prevent-closing");
