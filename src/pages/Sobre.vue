@@ -20,7 +20,8 @@ export default {
 <style scoped>
 main {
   background-color: var(--color-background);
-  max-width: 100%;
+  max-width: 90%;
+  margin-left: 5%;
 }
 h1{
   margin-left: 40%;
@@ -28,6 +29,7 @@ h1{
 }
 h2{
   margin-left: 20%;
+  margin-top: 15px;
 }
 h3{
   margin-left: 10px;

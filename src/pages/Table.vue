@@ -3,6 +3,7 @@
     <b-button
       v-b-modal.modal-prevent-closing
       class="float-end"
+      id="buttonAdd"
       style="margin-top: 10px"
       >Adicionar Exame</b-button
     >
@@ -58,7 +59,7 @@
               v-bind:key="data"
               v-model="data"
               :state="clearState"
-              type="date"
+              type="date" 
               required
             ></b-form-input>
           </b-form-group>
@@ -107,3 +108,13 @@ export default {
   },
 };
 </script>
+<style scoped>
+#buttonAdd{
+  background-color: rgb(255, 255, 255);
+  color:aqua;
+  font-weight: bold;
+  border: azure;
+  border-radius: 25px;
+
+}
+</style>

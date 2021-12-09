@@ -96,7 +96,7 @@ h1{
   font-size: 1.5rem;
 }
 #carrosel {
-  width: 700px;
+  width: 600px;
   z-index: 1;
   position: absolute;
   margin-top: 15px;
