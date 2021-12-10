@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Table class="tables" />
+    <Table class="tables"/>
   </main>
 </template>
 <script>
@@ -15,10 +15,10 @@ export default {
 
 <style scoped>
 main {
-  background-color: var(--color-background-home);
   width: 100%;
 }
 .tables {
-  background-color: rgb(207, 204, 204);
+  background-color: white;
+  color: aqua;
 }
 </style>

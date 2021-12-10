@@ -4,7 +4,7 @@
       v-b-modal.modal-prevent-closing
       class="float-end"
       id="buttonAdd"
-      style="margin-top: 10px"
+      style="margin-top:10px"
       >Adicionar Exame</b-button
     >
     <div>
@@ -113,8 +113,7 @@ export default {
   background-color: rgb(255, 255, 255);
   color:aqua;
   font-weight: bold;
-  border: azure;
   border-radius: 25px;
-
+  border-color: aqua;
 }
 </style>
